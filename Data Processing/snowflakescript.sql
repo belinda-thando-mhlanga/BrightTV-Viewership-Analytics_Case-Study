@@ -123,3 +123,35 @@ SELECT
 
 FROM Base
 ORDER BY RecordDate_SA DESC, UserID;
+
+--------------------------------------------------------------------------------------
+Check total viewership records:
+SELECT COUNT(*) AS total_viewership
+FROM BRIGHT_TV.CASESTUDY.VIEWERSHIP
+WHERE RecordDate2 IS NOT NULL
+  AND Duration2 != '00:00:00'; ---------------10000
+
+-------------------------------------------matching users ------9145
+SELECT COUNT(*) AS with_user_profiles
+FROM BRIGHT_TV.CASESTUDY.VIEWERSHIP AS v
+INNER JOIN BRIGHT_TV.CASESTUDY.USERPROFILES AS u
+    ON v.UserID = u.UserID
+WHERE v.RecordDate2 IS NOT NULL
+  AND v.Duration2 != '00:00:00';
+
+---------------------------------------orphan values
+SELECT COUNT(*) AS without_user_profiles
+FROM BRIGHT_TV.CASESTUDY.VIEWERSHIP AS v
+LEFT JOIN BRIGHT_TV.CASESTUDY.USERPROFILES AS u
+    ON v.UserID = u.UserID
+WHERE u.UserID IS NULL
+  AND v.RecordDate2 IS NOT NULL
+  AND v.Duration2 != '00:00:00';
+
+---------------------------------See what UserIDs are orphaned:
+SELECT DISTINCT v.UserID
+FROM BRIGHT_TV.CASESTUDY.VIEWERSHIP AS v
+LEFT JOIN BRIGHT_TV.CASESTUDY.USERPROFILES AS u
+    ON v.UserID = u.UserID
+WHERE u.UserID IS NULL
+LIMIT 20;
