@@ -19,10 +19,13 @@ Very few viewers watch more than 3 hours, indicating opportunities for retention
 Monthly data shows a steady rise over the first quarter, with March having the highest viewership.
 
 ## 🛠️ Tools Used
-- Microsoft Excel – pivot tables
+- Microsoft Excel – (Pivot Tables & Charts)
 - Miro - Data Planning
 - SQL / Snowflake – cleaning data
 - Canva - presentation
+- Power BI
+- GoogleLooker Studio
+- loveable 
 
 ## Visualizations
 Key insights & recommendations for the CEO
