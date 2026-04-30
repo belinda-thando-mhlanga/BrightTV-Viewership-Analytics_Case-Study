@@ -25,7 +25,7 @@ Monthly data shows a steady rise over the first quarter, with March having the h
 - Canva - presentation
 - Power BI
 - GoogleLooker Studio
-- loveable 
+- loveable - https://thando-bright-tv-analysis.lovable.app
 
 ## Visualizations
 Key insights & recommendations for the CEO
